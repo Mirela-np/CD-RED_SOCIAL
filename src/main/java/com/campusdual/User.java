@@ -1,12 +1,13 @@
 package com.campusdual;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
 
     private String name;
-    private List<User> userList;
-    private List<Post> postList;
+    private List<User> userList=new ArrayList<>();
+    private List<Post> postList=new ArrayList<>();
 
     public User(String name, List<User> userList, List<Post> postList) {
         this.name = name;
@@ -14,7 +15,8 @@ public class User {
         this.postList = postList;
     }
 
-    public User() {
+    public User(String name) {
+        this.name=name;
     }
 
     public String getName() {
@@ -67,9 +69,17 @@ public class User {
     //dejar de seguir un usuario
 
     public void unfollowUser(User user){
-        userList.remove(user);
 
-    }
+        if(!userList.contains(user)){
+            System.out.println("El usuario no existe");
+        }else{
+            userList.remove(userList.indexOf(user));
+            System.out.println("Has dejado de seguir  a este usuario");
+        }
+
+        }
+
+
     // seguir usuario
     public void followUser(User user){
         userList.add(user);
@@ -78,24 +88,26 @@ public class User {
     // borrar usuario
 
     public void deleteUser(User user){
-        userList.remove(user);
+      userList.remove(user);
     }
 
 
     //borrar post
     public void deletePost(Post post){
-        postList.remove(post);
+       postList.remove(post);
     }
 
     //listar los posts de un usuario
-    public void listPost(List<Post> postList){
+    public void listPost(){
 
         for(Post p: postList){
             System.out.println(p);
 
         }
 
+
     }
+
 
 
 }

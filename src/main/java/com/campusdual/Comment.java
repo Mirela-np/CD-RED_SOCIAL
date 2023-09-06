@@ -1,14 +1,15 @@
 package com.campusdual;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Comment {
 
     private String texto;
-    private Date fechaCom;
+    private LocalDateTime fechaCom;
     private User propietario;
 
-    public Comment(String texto, Date fechaCom, User propietario) {
+    public Comment(String texto, LocalDateTime fechaCom, User propietario) {
         this.texto = texto;
         this.fechaCom = fechaCom;
         this.propietario = propietario;
@@ -25,11 +26,11 @@ public class Comment {
         this.texto = texto;
     }
 
-    public Date getFechaCom() {
+    public LocalDateTime getFechaCom() {
         return fechaCom;
     }
 
-    public void setFechaCom(Date fechaCom) {
+    public void setFechaCom(LocalDateTime fechaCom) {
         this.fechaCom = fechaCom;
     }
 

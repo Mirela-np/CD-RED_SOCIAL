@@ -1,14 +1,16 @@
 package com.campusdual;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Post {
 
-    private Date fecha;
-    private List<Comment> commentList;
+    private LocalDateTime fecha;
+    private List<Comment> commentList=new ArrayList<>();
 
-    public Post(Date fecha, List<Comment> commentList) {
+    public Post(LocalDateTime fecha, List<Comment> commentList) {
         this.fecha = fecha;
         this.commentList = commentList;
     }
@@ -16,11 +18,11 @@ public class Post {
     public Post() {
     }
 
-    public Date getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 
@@ -42,7 +44,12 @@ public class Post {
     // borrar comentario
 
     public void deleteComment(Comment comment){
-        commentList.remove(comment);
+        if(!commentList.contains(comment)){
+            System.out.println("El comentario no existe");
+        }else{
+            commentList.remove(commentList.indexOf(comment));
+            System.out.println("Comentario eliminado ");
+        }
     }
 
 

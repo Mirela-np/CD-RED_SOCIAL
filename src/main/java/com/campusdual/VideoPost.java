@@ -1,5 +1,6 @@
 package com.campusdual;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -10,14 +11,14 @@ public class VideoPost extends Post{
     private int quality;
     private int duration;
 
-    public VideoPost(Date fecha, List<Comment> commentList, String titulo, int quality, int duration) {
+    public VideoPost(LocalDateTime fecha, List<Comment> commentList, String titulo, int quality, int duration) {
         super(fecha, commentList);
         this.titulo = titulo;
         this.quality = quality;
         this.duration = duration;
     }
 
-    public VideoPost(Date fecha, List<Comment> commentList) {
+    public VideoPost(LocalDateTime fecha, List<Comment> commentList) {
         super(fecha, commentList);
     }
 

@@ -1,5 +1,6 @@
 package com.campusdual;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -8,13 +9,13 @@ public class ImagePost extends Post{
     private String title;
     private double size;
 
-    public ImagePost(Date fecha, List<Comment> commentList, String title, double size) {
+    public ImagePost(LocalDateTime fecha, List<Comment> commentList, String title, double size) {
         super(fecha, commentList);
         this.title = title;
         this.size = size;
     }
 
-    public ImagePost(Date fecha, List<Comment> commentList) {
+    public ImagePost(LocalDateTime fecha, List<Comment> commentList) {
         super(fecha, commentList);
     }
 
